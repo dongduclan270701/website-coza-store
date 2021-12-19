@@ -18,7 +18,7 @@ exports.contact = (req, res) => {
     res.render('customer/contact', { title: 'Contact' });
 }
 exports.product_detail = (req, res) => {
-    axios.get('http://localhost:3000/api/clother',{params:{id:req.query.id}})
+    axios.get(`http://localhost:${PORT}/api/clother`,{params:{id:req.query.id}})
     .then(function (productdata) {
         res.render('customer/product-detail', { product: productdata.data,title: 'Product Detail' });
     })
@@ -59,7 +59,7 @@ exports.admin_user = (req, res) => {
 }
 
 exports.update_user = (req, res) => {
-    axios.get('http://localhost:3000/api/user',{params:{id:req.query.id}})
+    axios.get(`http://localhost:${PORT}/api/user`,{params:{id:req.query.id}})
     .then(function (userdata) {
         res.render('admin/pages/samples/Form_update_user',{user:userdata.data});
     })
@@ -79,7 +79,7 @@ exports.homePage_03 = (req, res) => {
 }
 exports.admin_clother = (req, res) => {
     //Make a get request to /api/clother
-    axios.get('http://localhost:3000/api/clother',{params:{category:req.query.category,count:req.query.count}})
+    axios.get(`http://localhost:${PORT}/api/clother`,{params:{category:req.query.category,count:req.query.count}})
         .then(function (response) {
             res.render('admin/pages/tables/Clother', { clother: response.data,params:req.query.count});
         })
@@ -89,7 +89,7 @@ exports.admin_clother = (req, res) => {
 }
 // exports.find_admin_clother = (req, res) => {
 //     //Make a get request to /api/clother
-//     axios.get('http://localhost:3000/api/clother',{params:{code:req.query.code}})
+//     axios.get(`http://localhost:${PORT}/api/clother',{params:{code:req.query.code}})
 //         .then(function (response2) {
 //             res.render('admin/pages/tables/Clother', { clother: response2.data});
 //         })
@@ -101,7 +101,7 @@ exports.create_clother = (req, res) => {
     res.render('admin/pages/forms/Form_clother');
 }
 exports.update_clother = (req, res) => {
-    axios.get('http://localhost:3000/api/clother',{params:{id:req.query.id}})
+    axios.get(`http://localhost:${PORT}/api/clother`,{params:{id:req.query.id}})
     .then(function (clotherdata) {
         res.render('admin/pages/forms/Form_update_clother',{clother:clotherdata.data});
     })
@@ -110,7 +110,7 @@ exports.update_clother = (req, res) => {
     })
 }
 exports.show_clother = (req, res) => {
-    axios.get('http://localhost:3000/api/clother',{params:{id:req.query.id}})
+    axios.get(`http://localhost:${PORT}/api/clother`,{params:{id:req.query.id}})
     .then(function (clotherdata) {
         res.render('admin/pages/forms/Show_clother',{clother:clotherdata.data});
     })
@@ -123,7 +123,7 @@ exports.show_clother = (req, res) => {
 exports.admin_balo = (req, res) => {
     //Make a get request to /api/clother
 
-    axios.get('http://localhost:3000/api/balo',{params:{category:req.query.category,count:req.query.count}})
+    axios.get(`http://localhost:${PORT}/api/balo`,{params:{category:req.query.category,count:req.query.count}})
         .then(function (response) {
             res.render('admin/pages/tables/Balo', { balo: response.data,params:req.query.count});
         })
@@ -136,7 +136,7 @@ exports.create_balo = (req, res) => {
     res.render('admin/pages/forms/Form_balo');
 }
 exports.update_balo = (req, res) => {
-    axios.get('http://localhost:3000/api/balo',{params:{id:req.query.id}})
+    axios.get(`http://localhost:${PORT}/api/balo`,{params:{id:req.query.id}})
     .then(function (balodata) {
         res.render('admin/pages/forms/Form_update_balo',{balo:balodata.data});
     })
@@ -145,7 +145,7 @@ exports.update_balo = (req, res) => {
     })
 }
 exports.show_balo = (req, res) => {
-    axios.get('http://localhost:3000/api/balo',{params:{id:req.query.id}})
+    axios.get(`http://localhost:${PORT}/api/balo`,{params:{id:req.query.id}})
     .then(function (balodata) {
         res.render('admin/pages/forms/Show_balo',{balo:balodata.data});
     })
@@ -159,7 +159,7 @@ exports.show_balo = (req, res) => {
 exports.admin_watches = (req, res) => {
     //Make a get request to /api/clother
 
-    axios.get('http://localhost:3000/api/watches',{params:{category:req.query.category,count:req.query.count}})
+    axios.get(`http://localhost:${PORT}/api/watches`,{params:{category:req.query.category,count:req.query.count}})
         .then(function (response) {
             res.render('admin/pages/tables/Watches', { watches: response.data,params:req.query.count});
         })
@@ -174,7 +174,7 @@ exports.create_watches = (req, res) => {
 
 
 exports.update_watches = (req, res) => {
-    axios.get('http://localhost:3000/api/watches',{params:{id:req.query.id}})
+    axios.get(`http://localhost:${PORT}/api/watches`,{params:{id:req.query.id}})
     .then(function (watchesdata) {
         res.render('admin/pages/forms/Form_update_watches',{watches:watchesdata.data});
     })
@@ -184,7 +184,7 @@ exports.update_watches = (req, res) => {
 }
 
 exports.show_watches = (req, res) => {
-    axios.get('http://localhost:3000/api/watches',{params:{id:req.query.id}})
+    axios.get(`http://localhost:${PORT}/api/watches`,{params:{id:req.query.id}})
     .then(function (watchesdata) {
         res.render('admin/pages/forms/Show_watches',{watches:watchesdata.data});
     })
@@ -197,7 +197,7 @@ exports.show_watches = (req, res) => {
 exports.admin_shoes = (req, res) => {
     //Make a get request to /api/clother
 
-    axios.get('http://localhost:3000/api/shoes',{params:{category:req.query.category,count:req.query.count}})
+    axios.get(`http://localhost:${PORT}/api/shoes`,{params:{category:req.query.category,count:req.query.count}})
         .then(function (response) {
             res.render('admin/pages/tables/Shoes', { shoes: response.data,params:req.query.count});
         })
@@ -211,7 +211,7 @@ exports.create_shoes = (req, res) => {
 }
 
 exports.update_shoes = (req, res) => {
-    axios.get('http://localhost:3000/api/shoes',{params:{id:req.query.id}})
+    axios.get(`http://localhost:${PORT}/api/shoes`,{params:{id:req.query.id}})
     .then(function (shoesdata) {
         res.render('admin/pages/forms/Form_update_shoes',{shoes:shoesdata.data});
     })
@@ -221,7 +221,7 @@ exports.update_shoes = (req, res) => {
 }
 
 exports.show_shoes = (req, res) => {
-    axios.get('http://localhost:3000/api/shoes',{params:{id:req.query.id}})
+    axios.get(`http://localhost:${PORT}/api/shoes`,{params:{id:req.query.id}})
     .then(function (shoesdata) {
         res.render('admin/pages/forms/Show_shoes',{shoes:shoesdata.data});
     })
@@ -233,7 +233,7 @@ exports.show_shoes = (req, res) => {
 //clotherWoman
 exports.admin_clotherWoman = (req, res) => {
     //Make a get request to /api/clotherWoman
-    axios.get('http://localhost:3000/api/clotherWoman',{params:{category:req.query.category,count:req.query.count}})
+    axios.get(`http://localhost:${PORT}/api/clotherWoman`,{params:{category:req.query.category,count:req.query.count}})
         .then(function (response) {
             res.render('admin/pages/tables/ClotherWoman', { clotherWoman: response.data,params:req.query.count});
         })
@@ -246,7 +246,7 @@ exports.create_clotherWoman = (req, res) => {
     res.render('admin/pages/forms/Form_clotherWoman');
 }
 exports.update_clotherWoman = (req, res) => {
-    axios.get('http://localhost:3000/api/clotherWoman',{params:{id:req.query.id}})
+    axios.get(`http://localhost:${PORT}/api/clotherWoman`,{params:{id:req.query.id}})
     .then(function (clotherWomandata) {
         res.render('admin/pages/forms/Form_update_clotherWoman',{clotherWoman:clotherWomandata.data});
     })
@@ -257,7 +257,7 @@ exports.update_clotherWoman = (req, res) => {
 
 
 exports.Show_clotherWoman = (req, res) => {
-    axios.get('http://localhost:3000/api/clotherWoman',{params:{id:req.query.id}})
+    axios.get(`http://localhost:${PORT}/api/clotherWoman`,{params:{id:req.query.id}})
     .then(function (clotherWomandata) {
         res.render('admin/pages/forms/Show_clotherWoman',{clotherWoman:clotherWomandata.data});
     })
@@ -272,7 +272,7 @@ exports.Show_clotherWoman = (req, res) => {
 exports.product = (req, res) => {
     //Make a get request to /api/clother
 
-    axios.get('http://localhost:3000/api/allproduct')
+    axios.get(`http://localhost:${PORT}/api/allproduct`)
         .then(function (response) {
             res.render('customer/product', { products: response.data, title:'Product'});
         })
@@ -289,7 +289,7 @@ exports.create_slide = (req, res) => {
 }
 exports.admin_slide = (req, res) => {
     //Make a get request to /api/slide
-    axios.get('http://localhost:3000/api/slide',{params:{category:req.query.category,count:req.query.count}})
+    axios.get(`http://localhost:${PORT}/api/slide`,{params:{category:req.query.category,count:req.query.count}})
         .then(function (response) {
             res.render('admin/pages/tables/Slide', { slide: response.data,params:req.query.count});
         })
@@ -305,7 +305,7 @@ exports.create_slideDown = (req, res) => {
 }
 exports.admin_slideDown = (req, res) => {
     //Make a get request to /api/slide
-    axios.get('http://localhost:3000/api/slide',{params:{category:req.query.category,count:req.query.count}})
+    axios.get(`http://localhost:${PORT}/api/slide`,{params:{category:req.query.category,count:req.query.count}})
         .then(function (response) {
             res.render('admin/pages/tables/SlideDown', { slide: response.data,params:req.query.count});
         })
@@ -314,7 +314,7 @@ exports.admin_slideDown = (req, res) => {
         })
 }
 exports.update_slide = (req, res) => {
-    axios.get('http://localhost:3000/api/slide',{params:{id:req.query.id}})
+    axios.get(`http://localhost:${PORT}/api/slide`,{params:{id:req.query.id}})
     .then(function (slidedata) {
         res.render('admin/pages/forms/Form_update_slide',{slide:slidedata.data});
     })
