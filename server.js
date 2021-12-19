@@ -41,4 +41,4 @@ app.use('/assets_admin_vendors',express.static(path.resolve(__dirname,"assets/as
 app.use('/',require('./server/routes/routes'))
 
 
-app.listen(3000,()=>{console.log(`Server is running on http://localhost:${PORT}`)})
+app.listen(PORT,()=>{console.log(`Server is running on http://localhost:${PORT}`)})
