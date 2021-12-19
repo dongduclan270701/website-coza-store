@@ -1,4 +1,5 @@
 const axios = require('axios');
+const PORT = process.env.PORT || 3000
 
 
 exports.homeRoutes = (req, res) => {
@@ -47,7 +48,7 @@ exports.login = (req, res) => {
 exports.admin_user = (req, res) => {
     //Make a get request to /api/clother
 
-    axios.get('http://localhost:3000/api/user',{params:{count:req.query.count}})
+    axios.get(`http://localhost:${PORT}/api/user`,{params:{count:req.query.count}})
         .then(function (response) {
             res.render('admin/pages/samples/User', { user: response.data,params:req.query.count});
         })
