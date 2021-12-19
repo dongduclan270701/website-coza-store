@@ -48,7 +48,7 @@ exports.login = (req, res) => {
 exports.admin_user = (req, res) => {
     //Make a get request to /api/clother
 
-    axios.get(`http://localhost:${PORT}/api/user`,{params:{count:req.query.count}})
+    axios.get(`/api/user`,{params:{count:req.query.count}})
         .then(function (response) {
             res.render('admin/pages/samples/User', { user: response.data,params:req.query.count});
         })
