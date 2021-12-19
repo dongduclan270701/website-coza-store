@@ -18,7 +18,7 @@ exports.contact = (req, res) => {
     res.render('customer/contact', { title: 'Contact' });
 }
 exports.product_detail = (req, res) => {
-    axios.get('/api/clother',{params:{id:req.query.id}})
+    axios.get(`/api/clother`,{params:{id:req.query.id}})
     .then(function (productdata) {
         res.render('customer/product-detail', { product: productdata.data,title: 'Product Detail' });
     })
