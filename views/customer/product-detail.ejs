@@ -268,59 +268,205 @@
 							<div class="row">
 								<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
 									<ul class="p-lr-28 p-lr-15-sm">
-										<li class="flex-w flex-t p-b-7">
-											<span class="stext-102 cl3 size-205">
-												Weight
-											</span>
-
-											<span class="stext-102 cl6 size-206">
-												<%= product.additional_information.weight %> g
-											</span>
-										</li>
-
-										<li class="flex-w flex-t p-b-7">
-											<span class="stext-102 cl3 size-205">
-												Dimensions
-											</span>
-
-											<span class="stext-102 cl6 size-206">
-												<%= product.additional_information.dimensions %> mm
-											</span>
-										</li>
-
-										<li class="flex-w flex-t p-b-7">
-											<span class="stext-102 cl3 size-205">
-												Materials
-											</span>
-
-											<span class="stext-102 cl6 size-206">
-												<%= product.additional_information.material %>
-											</span>
-										</li>
-
-										<li class="flex-w flex-t p-b-7">
-											<span class="stext-102 cl3 size-205">
-												Color
-											</span>
-
-											<span class="stext-102 cl6 size-206">
-												<% for(var i = 0 ; i < product.additional_information.color.length ; i++){ %>
-													<%= product.additional_information.color[i] + "," %>
-													<% } %>
-											.</span>
-										</li>
-
-										<li class="flex-w flex-t p-b-7">
-											<span class="stext-102 cl3 size-205">
-												Size
-											</span>
-
-											<span class="stext-102 cl6 size-206">
-												<% for(var i = 0 ; i < product.additional_information.size.length ; i++){ %>
-													<%= product.additional_information.size[i] + "," %>
-													<% } %>
-											.</span>
-										</li>
+										<% if(product.category === "men" || product.category === "woman"){ %>
+											<li class="flex-w flex-t p-b-7">
+												<span class="stext-102 cl3 size-205">
+													Weight
+												</span>
+	
+												<span class="stext-102 cl6 size-206">
+													<%= product.additional_information.weight %> g
+												</span>
+											</li>
+	
+											<li class="flex-w flex-t p-b-7">
+												<span class="stext-102 cl3 size-205">
+													Dimensions
+												</span>
+	
+												<span class="stext-102 cl6 size-206">
+													<%= product.additional_information.dimensions %> mm
+												</span>
+											</li>
+	
+											<li class="flex-w flex-t p-b-7">
+												<span class="stext-102 cl3 size-205">
+													Materials
+												</span>
+	
+												<span class="stext-102 cl6 size-206">
+													<%= product.additional_information.material %>
+												</span>
+											</li>
+	
+											<li class="flex-w flex-t p-b-7">
+												<span class="stext-102 cl3 size-205">
+													Color
+												</span>
+	
+												<span class="stext-102 cl6 size-206">
+													<% for(var i = 0 ; i < product.additional_information.color.length ; i++){ %>
+														<%= product.additional_information.color[i] + "," %>
+														<% } %>
+												.</span>
+											</li>
+	
+											<li class="flex-w flex-t p-b-7">
+												<span class="stext-102 cl3 size-205">
+													Size
+												</span>
+	
+												<span class="stext-102 cl6 size-206">
+													<% for(var i = 0 ; i < product.additional_information.size.length ; i++){ %>
+														<%= product.additional_information.size[i] + "," %>
+														<% } %>
+												.</span>
+											</li>
+										<% }else if(product.category === "balo"){ %>
+											<li class="flex-w flex-t p-b-7">
+												<span class="stext-102 cl3 size-205">
+													Weight
+												</span>
+	
+												<span class="stext-102 cl6 size-206">
+													<%= product.additional_information.weight %> g
+												</span>
+											</li>
+	
+											<li class="flex-w flex-t p-b-7">
+												<span class="stext-102 cl3 size-205">
+													Dimensions
+												</span>
+	
+												<span class="stext-102 cl6 size-206">
+													<%= product.additional_information.dimensions %> mm
+												</span>
+											</li>
+	
+											<li class="flex-w flex-t p-b-7">
+												<span class="stext-102 cl3 size-205">
+													Materials
+												</span>
+	
+												<span class="stext-102 cl6 size-206">
+													<%= product.additional_information.material %>
+												</span>
+											</li>
+											<li class="flex-w flex-t p-b-7">
+												<span class="stext-102 cl3 size-205">
+													Color
+												</span>
+	
+												<span class="stext-102 cl6 size-206">
+													<% for(var i = 0 ; i < product.additional_information.color.length ; i++){ %>
+														<%= product.additional_information.color[i] + "," %>
+														<% } %>
+												.</span>
+											</li>
+											<% }else if(product.category === "watches"){ %>
+												<li class="flex-w flex-t p-b-7">
+													<span class="stext-102 cl3 size-205">
+														Brand
+													</span>
+		
+													<span class="stext-102 cl6 size-206">
+														<%= product.additional_information.brand %>
+													</span>
+												</li>
+		
+												<li class="flex-w flex-t p-b-7">
+													<span class="stext-102 cl3 size-205">
+														Source
+													</span>
+		
+													<span class="stext-102 cl6 size-206">
+														<%= product.additional_information.source %>
+													</span>
+												</li>
+		
+												<li class="flex-w flex-t p-b-7">
+													<span class="stext-102 cl3 size-205">
+														Machine Model
+													</span>
+		
+													<span class="stext-102 cl6 size-206">
+														<%= product.additional_information.machine_model %>
+													</span>
+												</li>
+												<li class="flex-w flex-t p-b-7">
+													<span class="stext-102 cl3 size-205">
+														Shell Material
+													</span>
+		
+													<span class="stext-102 cl6 size-206">
+														<%= product.additional_information.shell_material %>
+													</span>
+												</li>
+												<li class="flex-w flex-t p-b-7">
+													<span class="stext-102 cl3 size-205">
+														Wire Material
+													</span>
+		
+													<span class="stext-102 cl6 size-206">
+														<%= product.additional_information.wire_material %>
+													</span>
+												</li>
+												<li class="flex-w flex-t p-b-7">
+													<span class="stext-102 cl3 size-205">
+														Glass Material
+													</span>
+		
+													<span class="stext-102 cl6 size-206">
+														<%= product.additional_information.glass_material %>
+													</span>
+												</li>
+												
+											<% }else if(product.category === "shoes"){ %>
+												<li class="flex-w flex-t p-b-7">
+													<span class="stext-102 cl3 size-205">
+														Brand
+													</span>
+		
+													<span class="stext-102 cl6 size-206">
+														<%= product.additional_information.brand %>
+													</span>
+												</li>
+		
+												<li class="flex-w flex-t p-b-7">
+													<span class="stext-102 cl3 size-205">
+														Source
+													</span>
+		
+													<span class="stext-102 cl6 size-206">
+														<%= product.additional_information.source %>
+													</span>
+												</li>
+												<li class="flex-w flex-t p-b-7">
+													<span class="stext-102 cl3 size-205">
+														Color
+													</span>
+		
+													<span class="stext-102 cl6 size-206">
+														<% for(var i = 0 ; i < product.additional_information.color.length ; i++){ %>
+															<%= product.additional_information.color[i] + "," %>
+															<% } %>
+													.</span>
+												</li>
+		
+												<li class="flex-w flex-t p-b-7">
+													<span class="stext-102 cl3 size-205">
+														Size
+													</span>
+		
+													<span class="stext-102 cl6 size-206">
+														<% for(var i = 0 ; i < product.additional_information.size.length ; i++){ %>
+															<%= product.additional_information.size[i] + "," %>
+															<% } %>
+													.</span>
+												</li>
+												
+												
+											<% } %>
 									</ul>
 								</div>
 							</div>
