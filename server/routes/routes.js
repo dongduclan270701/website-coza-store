@@ -111,6 +111,7 @@ routes.delete('/api/watches/:id', controller.deleteWatches);
 routes.post('/api/shoes', controller.createShoes);
 routes.get('/api/shoes', controller.findShoes);
 routes.post('/api/shoes/:id', controller.updateShoes);
+routes.put('/api/shoes/:id', controller.updateShoes);
 routes.delete('/api/shoes/:id', controller.deleteShoes);
 
 

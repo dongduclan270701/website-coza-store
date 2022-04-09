@@ -765,6 +765,8 @@ exports.updateShoes = (req, res) => {
                 res.status(404).send({ message: `Cannot Update Shoes with ${id}. Maybe user not found!` })
             } else {
                 res.redirect(`/admin/updateShoes?id=${id}`)
+                // res.send(data)
+                // res.status(500).send( "Update Successfully" )
             }
         })
         .catch(err => {
@@ -777,6 +779,7 @@ exports.updateShoes = (req, res) => {
 exports.deleteShoes = async (req, res) => {
     await Productdb.findByIdAndDelete(req.params.id)
     res.redirect(`/admin/shoes?category=shoes&count=1`)
+    // res.status(500).send({ message: "Delete successfully" })
 
 }
 

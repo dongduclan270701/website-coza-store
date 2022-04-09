@@ -379,7 +379,8 @@
                   <h4 class="card-title">Cập nhật sản phẩm (Đồng hồ)<i class="mdi mdi-chevron-left"></i></h4>
                   <a class="nav-link" style="padding: 0;color:white;width: fit-content;"
                       href="../admin/shoes?category=shoes&count=1"><button type="button" class="btn btn-primary"><i class="mdi mdi-chevron-left"></i>Quay lại</button></a>
-                  <form action="/api/shoes/<%= shoes._id %>?_method=POST" method="POST"
+                  <!-- form action="/api/shoes?id=<%= shoes._id %>" method="PUT" -->
+                      <form action="/api/shoes/<%= shoes._id %>?_method=POST" method="POST"
                     onsubmit="return validateForm()" name="myForm" id="updateshoes" class="forms-sample"
                     style="margin-top:10px">
                     <div class="form-group">
