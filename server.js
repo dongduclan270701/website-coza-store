@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const methodOverride = require('method-override')
 const connectDB = require('./server/database/connection');
+const cors = require('cors')
 
 const app = express();
 
@@ -23,7 +24,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 //set view engine
 app.set("view engine","ejs")
 // app.set("views", path.resolve(__dirname),"views/ejs"))
-// app.use(cors());
+app.use(cors());
 //load assets
 app.use('/css',express.static(path.resolve(__dirname,"assets/assets_customer/css")))
 app.use('/fonts',express.static(path.resolve(__dirname,"assets/assets_customer/fonts")))
