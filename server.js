@@ -6,7 +6,6 @@ const path = require('path');
 const methodOverride = require('method-override')
 const connectDB = require('./server/database/connection');
 const cors = require('cors')
-
 const app = express();
 
 dotenv.config({path: 'config.env'})
