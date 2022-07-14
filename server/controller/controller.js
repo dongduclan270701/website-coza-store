@@ -2,6 +2,7 @@ var Productdb = require('../model/model');
 var Slidedb = require('../model/modelSlide');
 var Userdb = require('../model/modeluser');
 
+
 //user
 
 exports.createUser = (req,res) => {
